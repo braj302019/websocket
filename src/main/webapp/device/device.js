@@ -10,16 +10,22 @@
 		}
 		if (device.action === "remove") {
 			document.getElementById(device.id).remove();
-		//device.parentNode.removeChild(device);
 		}
 		if (device.action === "toggle") {
 			var node = document.getElementById(device.id);
 			var statusText = node.children[2];
+			var toggleDevice = document.createElement("a");
+			toggleDevice.setAttribute("data-id", device.id);
+			toggleDevice.setAttribute("class", "toggleDevice");
+			toggleDevice.setAttribute("href", "#");
 			if (device.status === "On") {
-				statusText.innerHTML = "Status: " + device.status + " (<a href=\"#\" OnClick=toggleDevice(" + device.id + ")>Turn off</a>)";
+				toggleDevice.innerHTML = " (Turn off)";
+				statusText.innerHTML = "Status: " + device.status;
 			} else if (device.status === "Off") {
-				statusText.innerHTML = "Status: " + device.status + " (<a href=\"#\" OnClick=toggleDevice(" + device.id + ")>Turn on</a>)";
+				toggleDevice.innerHTML = " (Turn on)";
+				statusText.innerHTML = "Status: " + device.status;
 			}
+			statusText.appendChild(toggleDevice);
 		}
 	}
 
@@ -69,22 +75,36 @@
 		deviceDiv.appendChild(deviceType);
 
 		var deviceStatus = document.createElement("span");
+		deviceStatus.setAttribute("id", device.id);
+		
+		var toggleDevice = document.createElement("a");
+		toggleDevice.setAttribute("data-id", device.id);
+		toggleDevice.setAttribute("class", "toggleDevice");
+		toggleDevice.setAttribute("href", "#");
 		if (device.status === "On") {
-			deviceStatus.innerHTML = "<b>Status:</b> " + device.status + " (<a href=\"#\" OnClick=toggleDevice(" + device.id + ")>Turn off</a>)";
+			toggleDevice.innerHTML = " (Turn off)";
+			deviceStatus.innerHTML = "<b>Status:</b> " + device.status;
 		} else if (device.status === "Off") {
-			deviceStatus.innerHTML = "<b>Status:</b> " + device.status + " (<a href=\"#\" OnClick=toggleDevice(" + device.id + ")>Turn on</a>)";
-		//deviceDiv.setAttribute("class", "device off");
+			toggleDevice.innerHTML = " (Turn on)";
+			deviceStatus.innerHTML = "<b>Status:</b> " + device.status;
 		}
+		deviceStatus.appendChild(toggleDevice);
 		deviceDiv.appendChild(deviceStatus);
 
 		var deviceDescription = document.createElement("span");
 		deviceDescription.innerHTML = "<b>Comments:</b> " + device.description;
 		deviceDiv.appendChild(deviceDescription);
 
-		var removeDevice = document.createElement("span");
+		var removeDevice = document.createElement("a");
+		removeDevice.setAttribute("data-id", device.id);
 		removeDevice.setAttribute("class", "removeDevice");
-		removeDevice.innerHTML = "<a href=\"#\" OnClick=removeDevice(" + device.id + ")>Remove device</a>";
-		deviceDiv.appendChild(removeDevice);
+		removeDevice.setAttribute("href", "#");
+		removeDevice.innerHTML = "Remove device";
+		
+		var removeDeviceSpan = document.createElement("span");
+		removeDeviceSpan.setAttribute("class", "removeDevice");
+		removeDeviceSpan.appendChild(removeDevice);
+		deviceDiv.appendChild(removeDeviceSpan);
 	}
 
 	function showForm() {
@@ -108,4 +128,29 @@
 	function init() {
 		hideForm();
 	}
+
+	var addADevice = document.getElementById("addADevice");
+	addADevice.onclick = function() {
+		showForm();
+	};
+
+	var cancel = document.getElementById("cancel");
+	cancel.onclick = function() {
+		hideForm();
+	};
+
+	var add = document.getElementById("add");
+	add.onclick = function() {
+		formSubmit();
+	};
+
+	$('#content').on('click', 'a.removeDevice', function() {
+		var deviceId = $(this).data('id');
+		removeDevice(deviceId);
+	});
+
+	$('#content').on('click', 'a.toggleDevice', function() {
+		var deviceId = $(this).data('id');
+		toggleDevice(deviceId);
+	});
 })();

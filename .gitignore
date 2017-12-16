@@ -8,3 +8,6 @@ target/
 .settings/
 out/
 *.versionsBackup
+bower_components/
+node_modules/
+**/src/main/webapp/app/

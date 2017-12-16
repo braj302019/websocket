@@ -3,33 +3,32 @@
 <head>
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script src="websocket.js"></script>
+<script src="ideaboard.js"></script>
 <link rel="stylesheet" type="text/css" href="style.css">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-
-  <div id="wrapper">
-    <h1>Java Websocket Home</h1>
-    <p>Welcome to the Java WebSocket Home. Click the Add an idea button to start adding ideas.</p>
-    <br />
-    <div id="addIdea">
-      <div class="button">
-        <a href="#" OnClick="showForm()">Add an idea</a>
+  <div class="mainWrap">
+    <h1>Idea Board</h1>
+    <div class="whiteboard">
+      <h2 class="ideaBoardTitle">Tech talk session</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="button">
+              <a href="#" OnClick="showForm()">What went well <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="button">
+              <a href="#" OnClick="showForm()">What can be improved <i class="fa fa-plus-circle" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </div>
       </div>
-      <form id="addDeviceForm">
-        <h3>Add a new idea</h3>
-        <span>Name: <input type="text" name="device_name" id="device_name"></span> <span>Type: <select id="device_type">
-            <option name="type" value="Appliance">Appliance</option>
-            <option name="type" value="Electronics">Electronics</option>
-            <option name="type" value="Lights">Lights</option>
-            <option name="type" value="Other">Other</option>
-        </select></span> <span>Description:<br /> <textarea name="description" id="device_description" rows="2" cols="50"></textarea>
-        </span> <input type="button" class="button" value="Add" onclick=formSubmit()> <input type="reset" class="button" value="Cancel" onclick=hideForm()>
-      </form>
     </div>
     <br />
-    <div id="content"></div>
   </div>
-
 </body>
 </html>

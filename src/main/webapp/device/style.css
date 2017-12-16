@@ -72,10 +72,6 @@ p {
     display: inline-block;
 }
 
-.device.off {
-    background-color: #c8cccf;
-}
-
 .device span {
     display: block;
 }
