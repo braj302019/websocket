@@ -4,53 +4,40 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="HTML5 Examples">
+<link rel="stylesheet" href="/websocket/style.css">
+<link rel="stylesheet" href="/websocket/app/ext/components-font-awesome/css/font-awesome.css">
+<link rel="stylesheet" href="/websocket/app/ext/bootstrap/dist/css/bootstrap.css">
+
+<script src="//code.highcharts.com/stock/highstock.js"></script>
+<script src="//code.highcharts.com/stock/modules/exporting.js"></script>
+<script src="/websocket/app/ext/jquery/dist/jquery.min.js"></script>
+<script src="/websocket/app/ext/datatables/media/js/jquery.dataTables.js"></script>
 
 <title>HTML5 Examples</title>
-
-<link rel="stylesheet" href="/websocket/app/ext/bootstrap/dist/css/bootstrap.css">
 </head>
 <body>
-
-  <main role="main">
-  <div class="jumbotron">
-    <div class="container">
-      <h1 class="display-3">Hello, WebSocket!</h1>
-      <p>Welcome to the HTML5 WebSocket programming. Let's have a look on some of the cool applications made by WebSocket...</p>
-      <p>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a>
-      </p>
+  <div class="main">
+    <div>
+      <h2 class="aboutTitle">Chat Application</h2>
+      <div id="chatDemoBox" class="demoBox"></div>
+    </div>
+    <div>
+      <h2 class="aboutTitle">Real Time Chart</h2>
+      <div id="highchartDemoBox" class="demoBox"></div>
+    </div>
+    <div>
+      <h2 class="aboutTitle">Stock Exchange</h2>
+      <div id="stockDemoBox" class="demoBox"></div>
     </div>
   </div>
 
-  <div class="container">
-    <div class="row">
-      <div class="col-md-4">
-        <h2>Home Device Management</h2>
-        <p>Manage all the home equipments like appliance, electronics, lights and many more...</p>
-        <p>
-          <a class="btn btn-info" href="/websocket/device" role="button">View details »</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>Real Time Chart</h2>
-        <p>Show the real time data in chart using Highchart library with WebSocket...</p>
-        <p>
-          <a class="btn btn-info" href="/websocket/highchart" role="button">View details »</a>
-        </p>
-      </div>
-      <div class="col-md-4">
-        <h2>Chat</h2>
-        <p>Chat with your friends at any time instantly...</p>
-        <p>
-          <a class="btn btn-info" href="/websocket/chat" role="button">View details »</a>
-        </p>
-      </div>
-    </div>
-    <hr>
-  </div>
-  </main>
-
-  <script src="/websocket/app/ext/jquery/dist/jquery.min.js"></script>
-  <script src="/websocket/app/ext/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script>
+  	$(document).ready(function(){
+  		$("#chatDemoBox").load("/websocket/chat/index.html"); 
+  		$("#highchartDemoBox").load("/websocket/highchart/index.html"); 
+  		$("#stockDemoBox").load("/websocket/stock/index.html"); 
+  	});
+  </script>
+  <script src="/websocket/stock/stock.js"></script>
 </body>
 </html>

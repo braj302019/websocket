@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="/websocket/app/ext/components-font-awesome/css/font-awesome.css">
-<link rel="stylesheet" href="/websocket/app/ext/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-</head>
-<body>
-  <div class="demoBox">
-    <div class="chatContainer">
-      <div class="chatInnerContainer"></div>
-    </div>
-    <form onsubmit="return false;">
-      <input id="chatInput" class="chatInputEmpty" type="text" size="35" placeholder="Type a message here" autocomplete="off"><input id="chatButton"
-        type="submit" value="Send">
-    </form>
+<div>
+  <div class="chatContainer">
+    <div class="chatInnerContainer"></div>
   </div>
-  <script src="/websocket/app/ext/jquery/dist/jquery.min.js"></script>
-  <script src="chat.js"></script>
-</body>
-</html>
+  <form onsubmit="return false;">
+    <input id="chatInput" class="chatInputEmpty" type="text" size="35" placeholder="Type a message here" autocomplete="off"><input id="chatButton"
+      type="submit" value="Send">
+  </form>
+</div>
+
+<script>
+    $(document).ready(function(){
+      $("head").append('<link rel="stylesheet" href="/websocket/chat/style.css">'); 
+    });
+</script>
+
+<script src="/websocket/chat/chat.js"></script>

@@ -1,19 +1,20 @@
 {
-  "name": "websocket",
-  "description": "",
-  "main": "",
-  "license": "MIT",
-  "homepage": "",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "components-font-awesome": "^4.7.0",
-    "bootstrap": "^3.3.7",
-    "jquery": "^3.2.1"
-  }
+	"name": "websocket",
+	"description": "",
+	"main": "",
+	"license": "MIT",
+	"homepage": "",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"components-font-awesome": "^4.7.0",
+		"bootstrap": "^3.3.7",
+		"jquery": "^3.2.1",
+		"datatables": "^1.10.16"
+	}
 }

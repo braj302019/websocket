@@ -1,0 +1,25 @@
+.main {
+	width: 960px;
+	margin: 0 auto;
+}
+
+h2.aboutTitle {
+	font-size: 28px !important;
+	color: #0C0D0E !important;
+	font-weight: normal;
+	text-shadow: 0 1px 0 #FFF;
+	text-align: center;
+}
+
+.demoBox {
+	width: 100%;
+	min-height: 200px;
+	overflow: hidden;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	border: 2px solid #ccc;
+}
+
+#highchartDemoBox {
+	height: 400px;
+}
