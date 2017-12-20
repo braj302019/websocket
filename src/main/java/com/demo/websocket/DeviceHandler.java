@@ -51,11 +51,6 @@ public class DeviceHandler
    public void removeSession(Session session)
    {
       sessions.remove(session);
-      for (Device device : devices)
-      {
-         JsonObject addMessage = createAddMessage(device);
-         sendToSession(session, addMessage);
-      }
       System.out.println("total session count:" + sessions.size());
    }
 

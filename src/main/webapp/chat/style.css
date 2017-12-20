@@ -1,0 +1,96 @@
+.demoBox {
+	width: 500px;
+	height: 200px;
+	display: inline-block;
+	overflow: hidden;
+	background-color: #EEEEEE;
+	border-radius: 5px;
+}
+
+.chatContainer {
+	width: 100%;
+	height: 170px;
+	overflow: auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	position: relative;
+}
+
+.chatContainer:before {
+	content: "\f086";
+	font-family: FontAwesome;
+	position: absolute;
+	top: 50px;
+	left: 200px;
+	font-size: 50px;
+	color: #C0C0C0;
+}
+
+.chatInnerContainer {
+	width: 100%;
+	max-height: 170px;
+	overflow: auto;
+	position: absolute;
+	bottom: 0;
+}
+
+.chatMessage {
+	background-color: #F8ECDB;
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: #689A68;
+	padding: 3px;
+	opacity: 0.6;
+}
+
+.chatMessage.even {
+	background-color: #F8F8E7;
+}
+
+.chatMessageTimestamp {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000;
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 8px;
+}
+
+.chatMessageText {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	display: inline-block;
+	word-break: break-all;
+	max-width: 390px;
+	vertical-align: top;
+	color: #000;
+}
+
+input.chatInputEmpty {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: #689A68;
+	background-color: #f2f2f2;
+	width: 85%;
+	height: 30px;
+	padding: 1px 10px 1px 10px;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color: #689A68;
+}
+
+input#chatButton {
+	font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #fff;
+	width: 15%;
+	height: 31px;
+	padding: 1px 0 1px 0;
+	text-align: center;
+	background-color: #689A68;
+	opacity: 0.7;
+	cursor: pointer;
+	border-style: solid;
+	border-width: 1px 0 0 0;
+	border-color: #689A68;
+}
