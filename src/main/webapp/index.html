@@ -3,41 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="HTML5 Examples">
+<meta name="description" content="HTML5 WebSocket Examples">
+
 <link rel="stylesheet" href="/websocket/style.css">
+<link rel="stylesheet" href="/websocket/chat/style.css">
+<link rel="stylesheet" href="/websocket/stock/style.css">
+
 <link rel="stylesheet" href="/websocket/app/ext/components-font-awesome/css/font-awesome.css">
 <link rel="stylesheet" href="/websocket/app/ext/bootstrap/dist/css/bootstrap.css">
+<link rel="stylesheet" href="/websocket/app/ext/datatables/media/css/jquery.dataTables.css">
 
+<script src="/websocket/app/ext/jquery/dist/jquery.min.js"></script>
+<script src="/websocket/app/ext/bootstrap/dist/js/bootstrap.js"></script>
+
+<script src="/websocket/app/ext/datatables/media/js/jquery.dataTables.js"></script>
 <script src="//code.highcharts.com/stock/highstock.js"></script>
 <script src="//code.highcharts.com/stock/modules/exporting.js"></script>
-<script src="/websocket/app/ext/jquery/dist/jquery.min.js"></script>
-<script src="/websocket/app/ext/datatables/media/js/jquery.dataTables.js"></script>
 
-<title>HTML5 Examples</title>
+<script src="/websocket/chat/chat.js"></script>
+<script src="/websocket/highchart/highchart.js"></script>
+<script src="/websocket/stock/stock.js"></script>
+
+<title>HTML5 WebSocklet Examples</title>
 </head>
 <body>
-  <div class="main">
-    <div>
-      <h2 class="aboutTitle">Chat Application</h2>
-      <div id="chatDemoBox" class="demoBox"></div>
-    </div>
-    <div>
-      <h2 class="aboutTitle">Real Time Chart</h2>
-      <div id="highchartDemoBox" class="demoBox"></div>
-    </div>
-    <div>
-      <h2 class="aboutTitle">Stock Exchange</h2>
-      <div id="stockDemoBox" class="demoBox"></div>
+
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="item active chatDemoBox">
+        <h2 class="title">Chat Application</h2>
+        <div id="chatDemoBox" class="demoBox">
+          <div>
+            <div class="chatContainer">
+              <div class="chatInnerContainer"></div>
+            </div>
+            <form onsubmit="return false;">
+              <input id="chatInput" class="chatInputEmpty" type="text" size="35" placeholder="Type a message here" autocomplete="off"><input
+                id="chatButton" type="submit" value="Send">
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="item highchartDemoBox">
+        <h2 class="title">Real Time Chart</h2>
+        <div id="highchartDemoBox" class="demoBox">
+          <div id="container"></div>
+        </div>
+      </div>
+      <div class="item stockDemoBox">
+        <h2 class="title">Stock Exchange</h2>
+        <div id="stockDemoBox" class="demoBox">
+          <div>
+            <table id="stockTable" style="width: 100%">
+              <thead>
+                <th>Stock</th>
+                <th>Price</th>
+                <th>Time</th>
+                <th></th>
+                <th>Change</th>
+                <th>Min</th>
+                <th>Max</th>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <script>
-  	$(document).ready(function(){
-  		$("#chatDemoBox").load("/websocket/chat/index.html"); 
-  		$("#highchartDemoBox").load("/websocket/highchart/index.html"); 
-  		$("#stockDemoBox").load("/websocket/stock/index.html"); 
-  	});
-  </script>
-  <script src="/websocket/stock/stock.js"></script>
 </body>
 </html>
