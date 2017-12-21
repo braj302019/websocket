@@ -29,17 +29,19 @@ $(document).ready(function() {
 		var timestamp = ((hours < 10 ? '0' : '') + hours) + ':' + ((minutes < 10 ? '0' : '') + minutes) + ':' + ((seconds < 10 ? '0' : '') + seconds);
 
 		data.time = timestamp;
-		var index = stocks.findIndex(s => s.id == data.id);
+		
+		var indexes = $.map(stocks, function(obj, index) {
+		    if(obj.id == data.id) {
+		        return index;
+		    }
+		});
+		
+		var index = indexes.length > 0 ? indexes[0] : -1; 
 		if (index == -1) {
 			stocks.push(data);
 			dataTable.fnAddData(data, true);
 		} else {
 			stocks[index] = data;
-			dataTable.fnUpdate(data, index);
-		}
-		
-		
-		if (index != -1) {
 			dataTable.fnUpdate(data, index);
 		}
 	}
